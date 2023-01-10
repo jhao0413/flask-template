@@ -1,0 +1,62 @@
+secret_key = "12345678"
+log_level = "INFO"
+proxy_allow_frontend = ['127.0.0.1', '::1']
+session_timeout = 86400
+object_storage_type = 'minio'
+static_folder="static"
+template_folder="templates"
+app_name = "高校信息采集中心"
+sms_type = "yunpian"
+
+[db]
+host = "10.10.10.102"
+database = "smart_campus_platform_test"
+user = "smart_campus_platform"
+password = "smart_campus_platform"
+port = 5432
+
+[redis]
+host = "10.10.10.103"
+port = 6379
+db = 10
+password = "redis"
+
+[minio]
+host = 'service-storage.qindingtech.com'
+port = 443
+access_key = 'qindingtech'
+secret_key = 'Pa55word'
+secure = true
+default_bucket = 'smart-campus-platform-dev'
+
+
+[jwt]
+access_token_expires = 1800
+refresh_token_expires = 259200
+
+[yunpian]
+api_key = '5a24d83cf36981665b3eec64f19aebef'
+
+[yunpian.template]
+verification_code = '4264660'
+express_delivery_send_notice = "4943388"
+express_delivery_update_notice = "4943390"
+manual_review_pass_notice='4943464'
+manual_review_not_pass_notice="4943474"
+
+[yztsms]
+user_id = '127104'
+password = 'ab8afb8783951a0c38b6deb889378dda'
+sign = '【高校信息采集中心】'
+[yztsms.template]
+verification_code = '您的验证码是#code#。如非本人操作，请忽略本短信。'
+test = '测试#test#。测试。'
+
+[celery]
+broker_url = 'amqp://smart-campus-platform:smart-campus-platform@rabbitmq.qindingtech.com:5672/smart-campus-platform'
+result_backend = "db+postgresql://smart_campus_platform:smart_campus_platform@10.10.10.102:5432/smart_campus_platform_dev"
+import_package = ['backend.tasks']
+
+[dev]
+enabled = true
+space_id = '66408226-075f-4c78-91cc-3531765623b6' # 主空间

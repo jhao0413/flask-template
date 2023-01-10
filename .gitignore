@@ -1,0 +1,9 @@
+.idea/
+.vscode/
+venv/
+__pycache__/
+*.pyc
+migrations/
+*.bak
+*.log
+*.xpr
