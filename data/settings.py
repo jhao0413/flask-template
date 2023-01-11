@@ -51,12 +51,8 @@ class FlaskSettings(TomlSettings):
 
     log_level: str = "DEBUG"
     secret_key: str = "654321"
-    static_folder: str = "static"
-    template_folder: str = "templates"
     proxy_allow_frontend: list = ["127.0.0.1", "::1"]
     session_timeout: int = 86400
-    object_storage_type: str = "minio"
-    sms_type: str = "yunpian"
     app_name: str
 
     db: DatabaseSetting = DatabaseSetting()

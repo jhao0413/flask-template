@@ -1,4 +1,4 @@
-from typing import Any, Callable
+from typing import Any
 
 from flask import Blueprint, Flask
 from data.settings import FlaskSettings
@@ -33,16 +33,16 @@ def create_flask_app(
     app = Flask(
         __name__,
         instance_relative_config=True,
-        template_folder=settings.template_folder,
-        static_folder=settings.static_folder,
-        static_url_path="/static",
     )
+
+    print(settings.db)
 
     # 加注蓝图
     if blueprint_module:
         blueprint_list = scan_types_from_module(
             scan_module=blueprint_module, scan_type=Blueprint
         )
+        # 按注册顺序遍历所有蓝图。
         values = app.iter_blueprints()
         for blueprint_item in blueprint_list:
             if blueprint_item in values:

@@ -3,10 +3,7 @@ log_level = "INFO"
 proxy_allow_frontend = ['127.0.0.1', '::1']
 session_timeout = 86400
 object_storage_type = 'minio'
-static_folder="static"
-template_folder="templates"
-app_name = "高校信息采集中心"
-sms_type = "yunpian"
+app_name = "flask-template"
 
 [db]
 host = "127.0.0.1"
