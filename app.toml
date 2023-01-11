@@ -9,10 +9,10 @@ app_name = "高校信息采集中心"
 sms_type = "yunpian"
 
 [db]
-host = "10.10.10.102"
-database = "smart_campus_platform_test"
-user = "smart_campus_platform"
-password = "smart_campus_platform"
+host = "127.0.0.1"
+database = "test"
+user = "root"
+password = "123456"
 port = 5432
 
 [jwt]
