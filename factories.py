@@ -22,26 +22,13 @@ def build_abs_path_by_file(related_file, relative_file_path: str) -> str:
 def create_flask_app(
     settings: FlaskSettings,
     blueprint_module: Any = None,
-    error_handler_func: Callable = None,
-    context_processors_func: Callable = None,
-    process_before_request_func: Callable = None,
-    init_app_func: Callable = None,
-    babel_func: Callable = None,
 ) -> Flask:
     """
     创建 flask app 对象
     :param settings: 配置项
     :param blueprint_module: 蓝图模块
-    :param error_handler_func: 错误处理函数，以Exception为参数传入
-    :param context_processors_func: 上下文处理函数，不许有参数
-    :param process_before_request_func: 请求前处理函数，不许有参数
-    :param init_app_func: 初始化应用，以app对象为参数传入
-    :param babel_func: 多国语言选择函数
-    :param template_filters: 模板过滤器字典
-    :param need_init_celery: 是否需要初始化celery
     :return: flask app对象
     """
-    print(settings)
     # 根据配置来设置app的静态目录和模板
     app = Flask(
         __name__,
