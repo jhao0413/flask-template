@@ -35,13 +35,12 @@ def create_flask_app(
         instance_relative_config=True,
     )
 
-    print(settings.db)
-
     # 加注蓝图
     if blueprint_module:
         blueprint_list = scan_types_from_module(
             scan_module=blueprint_module, scan_type=Blueprint
         )
+
         # 按注册顺序遍历所有蓝图。
         values = app.iter_blueprints()
         for blueprint_item in blueprint_list:
