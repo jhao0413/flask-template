@@ -3,7 +3,7 @@
 """
 # standard library
 from datetime import datetime
-from typing import Any, List, Optional
+from typing import Any, Optional
 
 from pydantic import BaseModel
 
@@ -19,7 +19,7 @@ class MessageCarrier(BaseModel):
     """
 
     def __init__(self):
-        self.created_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.created_at: datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.code: int = 200
         self.message: str = None
         self.data: Optional[Any] = None
